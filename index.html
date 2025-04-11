@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Agriculture System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-leaf"></i> Smart Agriculture System</h1>
+            <div class="status-indicator">
+                <span class="connection-status">Connected</span>
+                <div class="status-dot"></div>
+            </div>
+        </header>
+
+        <main>
+            <section class="dashboard">
+                <div class="sensor-grid">
+                    <div class="sensor-card">
+                        <div class="sensor-header">
+                            <i class="fas fa-temperature-high"></i>
+                            <h3>Temperature</h3>
+                        </div>
+                        <div class="sensor-value" id="temperature">--°C</div>
+                    </div>
+
+                    <div class="sensor-card">
+                        <div class="sensor-header">
+                            <i class="fas fa-tint"></i>
+                            <h3>Humidity</h3>
+                        </div>
+                        <div class="sensor-value" id="humidity">--%</div>
+                    </div>
+
+                    <div class="sensor-card">
+                        <div class="sensor-header">
+                            <i class="fas fa-water"></i>
+                            <h3>Soil Moisture</h3>
+                        </div>
+                        <div class="sensor-value" id="soil-moisture">--%</div>
+                    </div>
+
+                    <div class="sensor-card">
+                        <div class="sensor-header">
+                            <i class="fas fa-wind"></i>
+                            <h3>Gas Level</h3>
+                        </div>
+                        <div class="sensor-value" id="gas">--</div>
+                    </div>
+
+                    <div class="sensor-card">
+                        <div class="sensor-header">
+                            <i class="fas fa-sun"></i>
+                            <h3>Light Intensity</h3>
+                        </div>
+                        <div class="sensor-value" id="light">-- lux</div>
+                    </div>
+
+                    <div class="sensor-card">
+                        <div class="sensor-header">
+                            <i class="fas fa-running"></i>
+                            <h3>Motion</h3>
+                        </div>
+                        <div class="sensor-value" id="motion">--</div>
+                    </div>
+
+                    <div class="sensor-card">
+                        <div class="sensor-header">
+                            <i class="fas fa-cloud-rain"></i>
+                            <h3>Rain Status</h3>
+                        </div>
+                        <div class="sensor-value" id="rain">--</div>
+                    </div>
+                </div>
+
+                <div class="control-panel">
+                    <h2>Control Panel</h2>
+                    <div class="control-grid">
+                        <div class="control-card">
+                            <h3>Water Pump</h3>
+                            <label class="switch">
+                                <input type="checkbox" id="pump">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="control-card">
+                            <h3>Buzzer</h3>
+                            <label class="switch">
+                                <input type="checkbox" id="buzzer">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="alerts">
+                <h2>System Alerts</h2>
+                <div class="alert-container" id="alert-container">
+                    <!-- Alerts will be dynamically added here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html> 
