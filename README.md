@@ -1,1 +1,0 @@
-# Smart-Agriculture-Monitoring-System
